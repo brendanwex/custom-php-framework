@@ -31,11 +31,11 @@ class Router
 			unset($sections[0]);
 			$sections = array_values($sections);
 		}
-
+/*
 		unset($sections[0]);
 		$sections = array_values($sections);
 
-
+*/
 		return $sections;
 
 
@@ -132,7 +132,7 @@ class Router
 
 
 			if(DEV_MODE) {
-				echo $e->debug_error();
+				echo $e->getMessage();
 			}else{
 
 				error_404();
