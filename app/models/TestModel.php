@@ -38,4 +38,3 @@ class TestModel extends Model
 
 
 }
-$TestModel = new TestModel();
