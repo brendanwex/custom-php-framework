@@ -43,8 +43,9 @@ class Controller
 			$this->logger = new Logger();
 		endif;
 
-
-		$this->uploader = new Uploader();
+        if(ENABLE_UPLOADER) {
+            $this->uploader = new Uploader();
+        }
 
 	}
 
