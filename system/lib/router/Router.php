@@ -7,6 +7,9 @@
  * @Version
  */
 
+
+namespace App\Lib;
+
 defined('APP_DIR') OR exit('No direct script access allowed');
 
 

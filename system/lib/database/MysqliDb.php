@@ -3,6 +3,8 @@
  * Copyright (c) 2017.
  */
 
+namespace App\Lib;
+
 class Db
 {
 

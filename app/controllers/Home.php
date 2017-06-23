@@ -9,8 +9,7 @@
  */
 
 
-
-class Home extends Controller
+class Home extends App\Controller
 {
 
 

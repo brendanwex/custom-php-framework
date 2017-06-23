@@ -7,7 +7,7 @@
  * Time: 20:34
  *
  */
-class TestModel extends Model
+class TestModel extends App\Model
 {
 
     function __construct()

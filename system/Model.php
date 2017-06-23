@@ -7,6 +7,8 @@
  * @Version
  */
 
+namespace App;
+
 defined('APP_DIR') OR exit('No direct script access allowed');
 
 class Model
@@ -14,13 +16,13 @@ class Model
 
 
 	function __construct() {
-        $this->router = new Router();
+        $this->router = new Lib\Logger();
 
         if(ENABLE_DB):
-            $this->db = new Db(array('host' => DB_HOST, 'username' => DB_USER, 'password' => DB_PASS, 'db' => DB_NAME, 'port' => DB_PORT, 'prefix' => DB_PREFIX));
+            $this->db = new Lib\Db(array('host' => DB_HOST, 'username' => DB_USER, 'password' => DB_PASS, 'db' => DB_NAME, 'port' => DB_PORT, 'prefix' => DB_PREFIX));
         endif;
         if(ENABLE_SMTP):
-            $this->mail = new PHPMailer();
+            $this->mail = new \PHPMailer();
             $this->mail->isSMTP();
             $this->mail->Host = SMTP_HOST;
             $this->mail->SMTPAuth = SMTP_AUTH;
@@ -36,11 +38,11 @@ class Model
         endif;
 
         if(DEV_LOG):
-            $this->logger = new Logger();
+            $this->logger = new Lib\Logger();
         endif;
 
         if(ENABLE_UPLOADER) {
-            $this->uploader = new Uploader();
+            $this->uploader = new Lib\Uploader();
         }
 
 
