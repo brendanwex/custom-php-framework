@@ -32,9 +32,11 @@ class Home extends App\Controller
 
         $data = array(
 
-            'title' => "Custom PHP Framework",
+            'title' => "Welcome to our Custom PHP Framework",
 
-            'message' => 'You can change this text from /controllers/Home.php'
+            'message' => 'This example uses our built in Database Connector and Model.',
+
+			'posts' => $this->test_model->get_posts()
 
         );
 
@@ -47,29 +49,34 @@ class Home extends App\Controller
 
     }
 
-    public function about(){
+
+	public function article()
+	{
 
 
-        $data = array(
-
-            'title' => "Custom PHP Framework ~ About",
-
-            'message' => 'Just another test using models',
+		$post_slug = $this->router->uri_segment(2);
 
 
-            'about' => $this->test_model->some_data_source()
+		$data = array(
 
-        );
+			'title' => "Example of a single article",
 
-        $this->view('template/header', $data);
+			'message' => 'This example uses our built in Database Connector and Model.',
 
-        $this->view('index', $data);
+			'posts' => $this->test_model->get_article($post_slug)
 
-        $this->view('template/footer');
+		);
+
+		$this->view('template/header', $data);
+
+		$this->view('article', $data);
+
+		$this->view('template/footer');
 
 
+	}
 
-    }
+
 
 
 }

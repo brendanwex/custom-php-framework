@@ -9,17 +9,16 @@
 
 
     <?php
-    if(isset($about)){
+    if(isset($posts)){
 
-        echo "<pre>";
-        var_dump($about);
-        echo "</pre>";
+        foreach($posts as $post){
 
-        echo "<pre>";
+            echo "<div class='well'>";
+            echo "<h3>".$post['post_title']."</h3>";
+            echo "<a href='home/article/".$post['post_slug']."/' class='btn btn-primary'>Read</a>";
+            echo "</div>";
 
-        echo "class TestModel extends Model { public function some_data_source(){ return array( 'version' =&gt; 'dev-master', 'app' =&gt; 'Simple PHP Framework', 'website' =&gt; 'https://github.com/brendanwex/custom-php-framework' ); } }";
-
-        echo "</pre>";
+        }
     }
     ?>
 

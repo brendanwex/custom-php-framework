@@ -21,7 +21,7 @@ class Controller
 		$this->router = new Lib\Router();
 
 		if(ENABLE_DB):
-    	$this->db = new Lib\Db(array('host' => DB_HOST, 'username' => DB_USER, 'password' => DB_PASS, 'db' => DB_NAME, 'port' => DB_PORT, 'prefix' => DB_PREFIX));
+    	$this->db = new \Db(array('host' => DB_HOST, 'username' => DB_USER, 'password' => DB_PASS, 'db' => DB_NAME, 'port' => DB_PORT, 'prefix' => DB_PREFIX));
 		endif;
 		if(ENABLE_SMTP):
 		$this->mail = new \PHPMailer();

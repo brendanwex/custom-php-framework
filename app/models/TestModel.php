@@ -21,20 +21,27 @@ class TestModel extends App\Model
     }
 
 
-    public function some_data_source(){
+    public function get_posts(){
 
 
-        return array(
+       $posts = $this->db->get('posts');
 
-            'version' => 'dev-master',
-            'app' => 'Simple PHP Framework',
-            'website' => 'https://github.com/brendanwex/custom-php-framework'
-
-
-        );
+       return $posts;
 
 
     }
+
+    public function get_article($slug){
+
+
+		$this->db->where('post_slug', $slug);
+
+		$post = $this->db->getOne('posts');
+
+
+		return $post;
+
+	}
 
 
 }

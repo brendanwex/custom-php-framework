@@ -45,10 +45,10 @@ define('DEV_LOG_DIR', $_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.INCLUDES_DIR
  * Database configuration (MySQL) - credit / docs : https://github.com/joshcam/PHP-MySQLi-Database-Class
  */
 
-define('ENABLE_DB', false);
-define('DB_HOST', '');
-define('DB_NAME', '');
-define('DB_USER', '');
+define('ENABLE_DB', true);
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'framework_demo');
+define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_PORT', 3306);
 define('DB_PREFIX', '');

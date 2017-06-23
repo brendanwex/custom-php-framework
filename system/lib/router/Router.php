@@ -110,7 +110,7 @@ class Router
 			if (!class_exists(ucfirst($sections[0])) || !method_exists(ucfirst($sections[0]), $this->dash_to_underscore($sections[1]))) {
 
 
-				throw new Exception('Controller or method specified may not exist, or method may not be publicly accessible.');
+				throw new \Exception('Controller or method specified may not exist, or method may not be publicly accessible.');
 
                 //print_r($sections);
 
